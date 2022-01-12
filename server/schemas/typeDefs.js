@@ -18,7 +18,7 @@ const typeDefs = gql`
     }
 
     type Rating {
-        rating: String
+        rating: Boolean
         description: String
     }
 
@@ -28,11 +28,16 @@ const typeDefs = gql`
     }
 
     type Query {
-        
+
     }
 
     type Mutation {
-
+        addUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth
+        addDecision(choiceA: String!, choiceB: String!, finalDecision:String!): Decision
+        addRating(rating: String!, description: String): Rating
+        updateDecision(_id: ID!, choiceA: String, choiceB: String, finalDecision: String, rating: Rating!): Decision
+        updateRating(_id:ID!, rating: Boolean, description: String): Rating
+        deleteDecision(_id: ID!, choiceA: String, choiceB: String, finalDecision: String, rating: Rating): Decision
     }
 `;
 
