@@ -5,7 +5,6 @@ const bcrypt = require('bcrypt');
 const Decision = require('./Decision');
 
 const userSchema = new Schema({
-    // Remove first and last name, modify to username
     username: {
         type: String,
         required: true,
