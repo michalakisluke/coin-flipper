@@ -1,4 +1,4 @@
-const User = require('./USer');
+const User = require('./User');
 const Decision = require('./Decision');
 const Rating = require('./Rating');
 

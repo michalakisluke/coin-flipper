@@ -5,22 +5,19 @@ const bcrypt = require('bcrypt');
 const Decision = require('./Decision');
 
 const userSchema = new Schema({
-    firstName: {
+    // Remove first and last name, modify to username
+    username: {
         type: String,
         required: true,
         trim: true
-      },
-      lastName: {
+    },
+    email: {
         type: String,
         required: true,
-        trim: true
-      },
-      email: {
-        type: String,
-        required: true,
-        unique: true
-      },
-      password: {
+        unique: true,
+        match: /.+@.+\..+/
+    },
+    password: {
         type: String,
         required: true,
         minlength: 5
