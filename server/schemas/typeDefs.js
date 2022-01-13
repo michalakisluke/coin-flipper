@@ -40,6 +40,7 @@ const typeDefs = gql`
         updateDecision(_id: ID!, choiceA: String, choiceB: String, finalDecision: String, rating: Rating!): Decision
         updateRating(_id:ID!, rating: Boolean, description: String): Rating
         deleteDecision(_id: ID!, choiceA: String, choiceB: String, finalDecision: String, rating: Rating): Decision
+        login(email: String!, password: String!): Auth
     }
 `;
 
