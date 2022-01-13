@@ -30,7 +30,6 @@ const typeDefs = gql`
         user: User
         users: [User]
         decision(_id: ID!): Decision
-        decisions(user: ID): [Decision]
     }
 
     type Mutation {
@@ -39,7 +38,7 @@ const typeDefs = gql`
         addRating(rating: String!, description: String): Rating
         updateDecision(_id: ID!, choiceA: String, choiceB: String, finalDecision: String, rating: Rating!): Decision
         updateRating(_id:ID!, rating: Boolean, description: String): Rating
-        deleteDecision(_id: ID!, choiceA: String, choiceB: String, finalDecision: String, rating: Rating): Decision
+        deleteDecision(_id: ID!): Decision
         login(email: String!, password: String!): Auth
     }
 `;
