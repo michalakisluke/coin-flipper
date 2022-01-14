@@ -4,7 +4,7 @@ const { signToken } = require('../utils/auth');
 
 const userController = {
     // get all Users
-    getAllUsers(req, res) {
+    user: function getAllUsers(req, res) {
         User.find({})
         .populate({
            path: 'decisions',
@@ -18,7 +18,7 @@ const userController = {
         })
     },
     // get User by id
-    getUserById({ params }, res) {
+    userId: function getUserById({ params }, res) {
         User.findOne({ _id: params.id })
             .populate({
                 path: 'decisions',
@@ -38,13 +38,13 @@ const userController = {
             });
     },
     // create User
-    createUser({ body }, res) {
+    createUser: function createUser({ body }, res) {
         User.create(body)
             .then(dbUserData => res.json(dbUserData))
             .catch(err => res.status(400).json(err));
     },
     // login user
-    loginUser(parent, { email, password }) {
+    login: function loginUser(parent, { email, password }) {
         const user = await User.find({ email });
 
         if (!user) {
