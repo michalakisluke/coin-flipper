@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
-const Rating = require('./Rating');
 
 const decisionSchema = new Schema({
     choiceA: {

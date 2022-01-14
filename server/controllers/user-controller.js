@@ -45,7 +45,7 @@ const userController = {
     },
     // login user
     login: function loginUser(parent, { email, password }) {
-        const user = await User.find({ email });
+        const user = User.find({ email });
 
         if (!user) {
             throw new AuthenticationError('That user does not exist');
