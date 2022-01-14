@@ -1,4 +1,6 @@
-const { User, Decision, Rating } = require('../models');
+const { User } = require('../models');
+const { AuthenticationError } = require('apollo-server-express');
+const { signToken } = require('../utils/auth');
 
 const userController = {
     // get all Users
@@ -42,8 +44,20 @@ const userController = {
             .catch(err => res.status(400).json(err));
     },
     // login user
-    loginUser({}, res) {
-        User.findOne({ _id: params.id })
+    loginUser(parent, { email, password }) {
+        const user = await User.find({ email });
+
+        if (!user) {
+            throw new AuthenticationError('That user does not exist');
+        }
+
+        if ( password !== user.password) {
+            throw new AuthenticationError('Incorrect credentials');
+        }
+
+        const token = signToken(user);
+
+        return { token, user };
     }
 }
 
