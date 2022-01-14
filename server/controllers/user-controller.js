@@ -40,6 +40,10 @@ const userController = {
         User.create(body)
             .then(dbUserData => res.json(dbUserData))
             .catch(err => res.status(400).json(err));
+    },
+    // login user
+    loginUser({}, res) {
+        User.findOne({ _id: params.id })
     }
 }
 

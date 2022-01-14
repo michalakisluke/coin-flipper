@@ -16,11 +16,6 @@ const typeDefs = gql`
         rating: [Rating]
     }
 
-    type Rating {
-        rating: Boolean
-        description: String
-    }
-
     type Auth {
         token: ID
         user: User
@@ -35,9 +30,7 @@ const typeDefs = gql`
     type Mutation {
         addUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth
         addDecision(choiceA: String!, choiceB: String!, finalDecision:String!): Decision
-        addRating(rating: String!, description: String): Rating
-        updateDecision(_id: ID!, choiceA: String, choiceB: String, finalDecision: String, rating: Rating!): Decision
-        updateRating(_id:ID!, rating: Boolean, description: String): Rating
+        updateDecision(_id: ID!, choiceA: String, choiceB: String, finalDecision: String, rating: Rating): Decision
         deleteDecision(_id: ID!): Decision
         login(email: String!, password: String!): Auth
     }

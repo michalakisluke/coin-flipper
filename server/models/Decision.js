@@ -19,7 +19,14 @@ const decisionSchema = new Schema({
         required: true,
         trim: true
     },
-    rating: [Rating.schema]
+    rating: {
+        type: Boolean,
+        required: true,
+    },
+    description: {
+        type: String,
+        trim: true
+    }
 });
 
 const Decision = mongoose.model('Decision', decisionSchema);
