@@ -2,38 +2,42 @@ const db = require("./connection");
 const { User, Decision, Rating } = require("../models");
 
 db.once("open", async () => {
-  await Rating.deleteMany();
+  //  await Rating.deleteMany();
 
-  const ratings = await Rating.insertMany([
-    {
-      type: true,
-      description:
-        "Best choice I ever made! I'm a millionaire because of this!",
-    },
+  //  const ratings = await Rating.insertMany([
+  //    {
+  //      type: true,
+  //      description:
+  //        "Best choice I ever made! I'm a millionaire because of this!",
+  //    },
 
-    {
-      type: false,
-      description:
-        "Why...? Why did I do this...? None of this should have happened...",
-    },
-  ]);
+  //    {
+  //      type: false,
+  //      description:
+  //        "Why...? Why did I do this...? None of this should have happened...",
+  //    },
+  //  ]);
 
-  console.log("ratings seeded");
+  //  console.log("ratings seeded");
 
   await Decision.deleteMany();
 
-  const decisions = await Decision.insertMany([
+  await Decision.create([
     {
       choiceA: "Spend money on food",
       choiceB: "Spend money on lottery tickets",
       finalDecision: "Spend money on lottery tickets",
-      rating: ratings[0]._id,
+      rating: true,
+      description:
+        "Best choice I ever made! I'm a millionaire because of this!",
     },
     {
       choiceA: "Dress up as the Easter Bunny at Christmas",
       choiceB: "Dress up as Santa Claus during Easter",
       finalDecision: "Dress up as Santa Claus during Easter",
-      rating: ratings[1]._id,
+      rating: false,
+      description:
+        "Why...? None of this should have happened... I'm so sorry Josh...",
     },
   ]);
 
