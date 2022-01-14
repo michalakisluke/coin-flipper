@@ -29,7 +29,7 @@ const typeDefs = gql`
     }
 
     type Mutation {
-        addUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth
+        addUser(username: String!, email: String!, password: String!): Auth
         addDecision(choiceA: String!, choiceB: String!, finalDecision:String!): Decision
         updateDecision(_id: ID!, choiceA: String, choiceB: String, finalDecision: String, rating: Boolean, description: String): Decision
         deleteDecision(_id: ID!): Decision

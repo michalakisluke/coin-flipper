@@ -38,10 +38,15 @@ const userController = {
             });
     },
     // create User
-    createUser: function createUser({ body }, res) {
-        User.create(body)
-            .then(dbUserData => res.json(dbUserData))
-            .catch(err => res.status(400).json(err));
+    // createUser: function createUser({ body }, res) {
+    //     User.create(body)
+    //         .then(dbUserData => res.json(dbUserData))
+    //         .catch(err => res.status(400).json(err));
+    createUser: async (parent, args) => {
+        const user = await User.create(args);
+        const token = signToken(user)
+
+        return { token, user };
     },
     // login user
     login: function loginUser(parent, { email, password }) {
