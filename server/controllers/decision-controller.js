@@ -5,7 +5,6 @@ const decisionController = {
     decisions: function getAllDecisions(req, res) {
         Decision.find({})
             .populate({
-            path: 'rating',
             select: '-__v'
             })
             .select('-__v')
@@ -19,7 +18,6 @@ const decisionController = {
     decisionId: function getDecisionById({ params }, res) {
         Decision.findOne({ _id: params.id })
             .populate({
-                path: 'rating',
                 select: '-__v'
             })
             .then(dbDecisionData => {
