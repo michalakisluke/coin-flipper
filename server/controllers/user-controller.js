@@ -14,7 +14,7 @@ const userController = {
         return User.findOne({ _id })
           .select('-__v -password')
           .populate('decisions')
-      },
+    },
     // create User -- this one works
     createUser: async (parent, args) => {
         const user = await User.create(args);

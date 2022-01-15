@@ -23,8 +23,7 @@ const decisionSchema = new Schema({
         required: true
     },
     rating: {
-        type: Boolean,
-        required: true,
+        type: Boolean
     },
     description: {
         type: String,
