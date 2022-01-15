@@ -1,7 +1,7 @@
 const { Decision } = require('../models');
 
 const decisionController = {
-    // get all Decisions (This controller does nothing now whoops)
+    // get all Decisions (This controller does nothing now whoops) -- untested
     decisions: function getAllDecisions(req, res) {
         Decision.find({})
             .populate({
@@ -14,7 +14,7 @@ const decisionController = {
                 res.status(400).json(err)
             })
     },
-    // get Decision by id
+    // get Decision by id -- untested
     decisionId: function getDecisionById({ params }, res) {
         Decision.findOne({ _id: params.id })
             .populate({
@@ -33,13 +33,13 @@ const decisionController = {
                 res.status(400).json(err);
             });
     },
-    // create a decision
+    // create a decision -- untested
     createDecision: function createDecision({ body }, res) {
         Decision.create(body)
             .then(dbUserData => res.json(dbUserData))
             .catch(err => res.status(400).json(err));
     },
-    // delete a decision
+    // delete a decision -- untested
     deleteDecision: function deleteDecision({ params }, res) {
         Decision.findOneAndDelete({ _id: params.id })
         .then(dbDecisionData => {
@@ -51,7 +51,7 @@ const decisionController = {
         })
         .catch(err => res.status(400).json(err))
     },
-    // rate a decision
+    // rate a decision -- untested
     addRating: function addRating({ params }, res) {
         Decision.findOneAndUpdate(
             { _id: params.id },

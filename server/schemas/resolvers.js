@@ -2,7 +2,7 @@
 // const { User, Decision } = require('../models');
 // const { signToken } = require('../utils/auth');
 
-const { user,
+const { users,
         userId,
         createUser,
         login } = require('../controllers/user-controller');
@@ -14,8 +14,8 @@ const { decisions,
 
 const resolvers = {
     Query: {
-        user: user,
-        users: userId,
+        users: users,
+        userId: userId,
         decision: decisionId
     },
     Mutation: {

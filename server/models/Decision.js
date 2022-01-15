@@ -18,6 +18,10 @@ const decisionSchema = new Schema({
         required: true,
         trim: true
     },
+    username: {
+        type: String,
+        required: true
+    },
     rating: {
         type: Boolean,
         required: true,

@@ -13,6 +13,7 @@ const typeDefs = gql`
         choiceA: String
         choiceB: String
         finalDecision: String
+        username: String
         rating: Boolean
         description: String
     }
@@ -23,15 +24,15 @@ const typeDefs = gql`
     }
 
     type Query {
-        user: User
         users: [User]
+        userId(_id: ID!): User
         decision(_id: ID!): Decision
     }
 
     type Mutation {
         addUser(username: String!, email: String!, password: String!): Auth
-        addDecision(choiceA: String!, choiceB: String!, finalDecision:String!): Decision
-        updateDecision(_id: ID!, choiceA: String, choiceB: String, finalDecision: String, rating: Boolean, description: String): Decision
+        addDecision(choiceA: String!, choiceB: String!, finalDecision:String!, username: String!, rating: Boolean, description: String): Decision
+        updateDecision(_id: ID!, choiceA: String, choiceB: String, finalDecision: String, username: String, rating: Boolean, description: String): Decision
         deleteDecision(_id: ID!): Decision
         login(email: String!, password: String!): Auth
     }
