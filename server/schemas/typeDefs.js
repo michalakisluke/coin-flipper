@@ -33,7 +33,7 @@ const typeDefs = gql`
         addUser(username: String!, email: String!, password: String!): Auth
         addDecision(choiceA: String!, choiceB: String!, finalDecision:String!, username: String!, rating: Boolean, description: String): Decision
         updateDecision(_id: ID!, choiceA: String, choiceB: String, finalDecision: String, username: String, rating: Boolean, description: String): Decision
-        deleteDecision(_id: ID!): Decision
+        deleteDecision(_id: ID!, username: String!): Decision
         login(email: String!, password: String!): Auth
     }
 `;
