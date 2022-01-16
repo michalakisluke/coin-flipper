@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
-const Rating = require('./Rating');
 
 const decisionSchema = new Schema({
     choiceA: {
@@ -19,7 +18,17 @@ const decisionSchema = new Schema({
         required: true,
         trim: true
     },
-    rating: [Rating.schema]
+    username: {
+        type: String,
+        required: true
+    },
+    rating: {
+        type: Boolean
+    },
+    description: {
+        type: String,
+        trim: true
+    }
 });
 
 const Decision = mongoose.model('Decision', decisionSchema);
