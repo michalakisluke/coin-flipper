@@ -1,5 +1,4 @@
 const { Decision, User } = require('../models');
-let ObjectId = require('mongodb').ObjectId;
 
 const decisionController = {
     // get Decision by id -- this one works
@@ -40,11 +39,13 @@ const decisionController = {
 
     addRating: async(parent, { _id, rating, description }) => {
        const updateDec = await Decision.findOneAndUpdate(
+        //    console.log(`The rating is ${rating}`),
+        //    console.log(`The description is ${description}`),
             { _id: _id },
-            { rating: rating },
-            { description: description }
+            { $set: { rating: rating, description: description } }
         );
         
+        console.log(updateDec);
         return updateDec;
     }
 }
