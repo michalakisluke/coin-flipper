@@ -27,6 +27,7 @@ db.once("open", async () => {
       choiceA: "Spend money on food",
       choiceB: "Spend money on lottery tickets",
       finalDecision: "Spend money on lottery tickets",
+      username: "SteveTheEgg666",
       rating: true,
       description:
         "Best choice I ever made! I'm a millionaire because of this!",
@@ -35,6 +36,7 @@ db.once("open", async () => {
       choiceA: "Dress up as the Easter Bunny at Christmas",
       choiceB: "Dress up as Santa Claus during Easter",
       finalDecision: "Dress up as Santa Claus during Easter",
+      username: "SteveTheEgg666",
       rating: false,
       description:
         "Why...? None of this should have happened... I'm so sorry Josh...",
