@@ -12,23 +12,6 @@ const decisionController = {
         const decision = await Decision.create({ ...args });
         console.log(decision.username);
         console.log(decision._id);
-        // const id = decision._id.toHexString();
-        // console.log(id);
-        // const removed = id.slice(0,-1);
-        // console.log(removed);
-        // const last = id.charAt(id.length - 1);
-        // console.log(last);
-        // const lastCharCode = last.charCodeAt(0);
-        // console.log(lastCharCode);
-        // const newLastCharCode = lastCharCode - 2;
-        // console.log(newLastCharCode);
-        // const newLast = String.fromCharCode(newLastCharCode);
-        // console.log(newLast);
-        // const updatedString = removed.concat(newLast);
-        // console.log(updatedString);
-        // const updatedId = new ObjectId(updatedString);
-        // console.log(updatedId);
-        // console.log(typeof updatedId);
 
         await User.findOneAndUpdate(
             { username: decision.username },
@@ -53,14 +36,7 @@ const decisionController = {
     },
     // rate a decision -- untested
 
-    addRating: function addRating({ params }, res) {
-        Decision.findOneAndUpdate(
-            { _id: params.id },
-            { $addToSet: { rating: Rating } },
-            { new: true }
-        )
-        .then(dbDecisionData => res.json(dbDecisionData))
-        .catch(err => res.json(err));
+    addRating: async(parent, { _id, rating, description }) => {
     }
 }
 
