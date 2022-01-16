@@ -35,8 +35,17 @@ const decisionController = {
         return('Decision deleted successfully');
     },
     // rate a decision -- untested
+    // needs to find the decision, update the rating and description, save new values
+    // does not need to affect user model, user model only references decision id
 
     addRating: async(parent, { _id, rating, description }) => {
+       const updateDec = await Decision.findOneAndUpdate(
+            { _id: _id },
+            { rating: rating },
+            { description: description }
+        );
+        
+        return updateDec;
     }
 }
 
