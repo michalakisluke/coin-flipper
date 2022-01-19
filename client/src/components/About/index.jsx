@@ -1,4 +1,4 @@
 import "./style.css";
 
-export {About} from "./bulletcard"
-export {AboutCTA} from "./bulletcardcta"
+export {About} from "./about"
+export {AboutCTA} from "./AboutCTA"
