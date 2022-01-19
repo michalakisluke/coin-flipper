@@ -13,7 +13,7 @@ export const QUERY_USERS = gql`
 
 export const QUERY_USER_ID = gql`
     query userId(_id: ID!) {
-        user(_id: ID!) {
+        user(_id: $id) {
             _id
             username
             decisions {
