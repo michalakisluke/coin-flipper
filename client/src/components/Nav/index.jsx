@@ -1,14 +1,14 @@
 import React, { useEffect } from "react";
+import React, { useState } from "react";
 import * as mdc from "material-components-web";
 import styled from "styled-components";
 
-function NavbarMobile() {
+function Nav() {
   useEffect(() => {
     new mdc.select.MDCSelect(document.querySelector(".drop-down-filled-dis .mdc-select"));
   }, []);
 
   return (
-    <NavbarMobile>
       <div className="widget-wrapper">
         <div className="drop-down-filled-dis">
           <div className="mdc-select   mdc-select--filled  demo-width-class" data-id="anima-widget">
@@ -47,15 +47,7 @@ function NavbarMobile() {
           </div>
         </div>
       </div>
-    </NavbarMobile>
-  );
+        );
 }
 
-const NavbarMobile = styled.div`
-  width: 428px;
-  height: 75px;
-  display: flex;
-  background-color: var(--white);
-`;
-
-export default NavbarMobile;
+export default Nav;
