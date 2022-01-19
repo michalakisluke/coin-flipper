@@ -29,7 +29,7 @@ export const ADD_DEC = gql`
 
 export const UPDATE_DEC = gql`
     mutation updateDecision(_id: ID!, choiceA: String, choiceB: String, finalDecision: String, username: String, rating: Boolean, description: String) {
-        updateDecision(_id: $ID, choiceA: $string, choiceB: $string, finalDecision: $string, username: $string, rating: $boolean, description: $string) {
+        updateDecision(_id: $id, choiceA: $string, choiceB: $string, finalDecision: $string, username: $string, rating: $boolean, description: $string) {
             choiceA
             choiceB
             finalDecision
@@ -41,7 +41,7 @@ export const UPDATE_DEC = gql`
 
 export const DELETE_DEC = gql`
     mutation deleteDecision(_id: ID!, username: String!) {
-        deleteDecision(_id: $ID, username: $string) {
+        deleteDecision(_id: $id, username: $string) {
             finalDecision
         }
     }
