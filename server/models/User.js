@@ -21,7 +21,12 @@ const userSchema = new Schema({
         required: true,
         minlength: 5
     },
-    decisions: [Decision.schema]
+    decisions: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'Decision'
+        }
+    ]
 });
 
 // set up pre-save middleware to create password
