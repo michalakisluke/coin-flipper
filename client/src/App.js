@@ -1,89 +1,18 @@
-import React, { Component } from "react";
+import React from 'react';
 import './App.css';
-import { Login, Register } from "./components/Login/index";
-// import { Nav } from "./components/Nav/index"
-// import { Description, Menu } from "./components/Main/index";
-// import { Input, Decision, Display } from "./components/Decison/index";
+import SearchAppBar from './components/SearchAppBar';
+import About from './components/About';
 
-// function App() {
-//   return (
-//     <div>
-//     <Nav></Nav>
-//     <main>
-//         <Description></Description>``
-//         <Menu></Menu>
-//     </main>
-// </div>
-//   )
-// }
+function App () {
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isLogginActive: true
-    };
-  }
-
-  componentDidMount() {
-    //Add .right by default
-    this.rightSide.classList.add("right");
-  }
-
-  changeState() {
-    const { isLogginActive } = this.state;
-
-    if (isLogginActive) {
-      this.rightSide.classList.remove("right");
-      this.rightSide.classList.add("left");
-    } else {
-      this.rightSide.classList.remove("left");
-      this.rightSide.classList.add("right");
-    }
-    this.setState(prevState => ({ isLogginActive: !prevState.isLogginActive }));
-  }
-
-  render() {
-    const { isLogginActive } = this.state;
-    const current = isLogginActive ? "Register" : "Login";
-    const currentActive = isLogginActive ? "login" : "register";
-    return (
-      <div className="App">
-        <div className="login">
-          <div className="container" ref={ref => (this.container = ref)}>
-            {isLogginActive && (
-              <Login containerRef={ref => (this.current = ref)} />
-            )}
-            {!isLogginActive && (
-              <Register containerRef={ref => (this.current = ref)} />
-            )}
-          </div>
-          <RightSide
-            current={current}
-            currentActive={currentActive}
-            containerRef={ref => (this.rightSide = ref)}
-            onClick={this.changeState.bind(this)}
-          />
-        </div>
-      </div>
-    );
-  }
-}
-
-const RightSide = props => {
   return (
-    <div
-      className="right-side"
-      ref={props.containerRef}
-      onClick={props.onClick}
-    >
-      <div className="inner-container">
-        <div className="text">{props.current}</div>
-      </div>
+    <div className="App">
+      <div>
+        <SearchAppBar />
+        <About />
+        </div>
     </div>
   );
-};
-
-
+}
 
 export default App;
