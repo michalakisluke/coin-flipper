@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import * as mdc from "material-components-web";
 import styled from "styled-components";
-import { CastoroNormalVulcan16px } from "../styledMixins";
-import "./ShadowCardDecision.css";
+import { CastoroNormalVulcan16px } from "../../styledMixins";
+import "./style.css";
 
-function ShadowCardDecision() {
+function Input() {
   useEffect(() => {
     new mdc.textField.MDCTextField(document.querySelector(".text-field-filled-di .mdc-text-field"));
     new mdc.textField.MDCTextField(document.querySelector(".text-field-filled-di-1 .mdc-text-field"));
@@ -13,9 +13,9 @@ function ShadowCardDecision() {
   }, []);
 
   return (
-    <DecisionCard className="animate-enter5" id="decision-card">
-      <Title>What’s the big (or small) decision?</Title>
-      <LoginAccount>
+    <div className="animate-enter5" id="decision-card">
+      <div>What’s the big (or small) decision?</div>
+      <div>
         <div className="text-field-filled-di">
           <label className="mdc-text-field mdc-text-field--filled">
             <span className="mdc-text-field__ripple"></span>
@@ -43,47 +43,10 @@ function ShadowCardDecision() {
             </button>
           </div>
         </a>
-      </LoginAccount>
-    </DecisionCard>
+      </div>
+    </div>
   );
 }
 
-const DecisionCard = styled.div`
-  width: 362px;
-  height: 327px;
-  margin-top: 47px;
-  flex-direction: column;
-  background-color: var(--white);
-  border-radius: 12px;
-  box-shadow: 0px 20px 50px #12112714;
-  opacity: 0;
-  transform: translate(0, 25px);
 
-  &.animate-enter5 {
-    animation: animate-enter5-frames 0.5s ease-in-out 0s 1 normal forwards;
-    opacity: 0;
-    transform: translate(0, 25px);
-  }
-`;
-
-const Title = styled.p`
-  ${CastoroNormalVulcan16px}
-  margin-left: 24px;
-  width: 314px;
-  height: 22px;
-  margin-top: 56px;
-  letter-spacing: 0;
-  line-height: 22.4px;
-  white-space: nowrap;
-`;
-
-const LoginAccount = styled.div`
-  margin-left: 24px;
-  width: 314px;
-  height: 173px;
-  margin-top: 20px;
-  display: flex;
-  flex-direction: column;
-`;
-
-export default ShadowCardDecision;
+export default Input;
