@@ -8,7 +8,6 @@ export const QUERY_USERS = gql`
             _id
         }
     } 
-
 `;
 
 export const QUERY_USER_ID = gql`
