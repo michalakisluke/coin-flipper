@@ -1,4 +1,4 @@
 import "./style.css";
 
-export { Menu } from "./menu";
-export { Description } from "./description"
+export { Menu } from "./Menu";
+export { Description } from "./Description"

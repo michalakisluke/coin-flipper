@@ -1,21 +1,21 @@
 import React, { Component } from "react";
 import './App.css';
 import { Login, Register } from "./components/Login/index";
-import { Nav } from "./components/Nav/index"
-import { Description, Menu } from "./components/Main/index";
-import { Input, Decision, Display } from "./components/Decison/index";
+// import { Nav } from "./components/Nav/index"
+// import { Description, Menu } from "./components/Main/index";
+// import { Input, Decision, Display } from "./components/Decison/index";
 
-function App() {
-  return (
-    <div>
-    <Nav></Nav>
-    <main>
-        <Description></Description>
-        <Menu></Menu>
-    </main>
-</div>
-  )
-}
+// function App() {
+//   return (
+//     <div>
+//     <Nav></Nav>
+//     <main>
+//         <Description></Description>``
+//         <Menu></Menu>
+//     </main>
+// </div>
+//   )
+// }
 
 class App extends React.Component {
   constructor(props) {
