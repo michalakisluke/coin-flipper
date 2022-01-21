@@ -24,7 +24,7 @@ Login to the application and input your two choices into the boxes.
 
 ![Determined Application Home](Determined_Application_Home.png)
 ![Determined Application About](Determined_Application_About.png)
-![Determined Application Decide](Determined_Application_Decide.png)
+![Determined Application Decide](Determined_Application_Decision.png)
 ![Determined Application Account](Determined_Application_Account.png)
 ![Determined Application Review](Determined_Application_Review.png)
 
