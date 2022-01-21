@@ -4,11 +4,11 @@
 Determined is a decision making application designed to address the myriad of choices that we all encounter daily. Release yourself from the crippling burden of choosing what to wear. Let us decide if you should pivot your business or go back to sleep for 30 more minutes. Make choosing a thing of the past and leave the tough choices to us. Right or wrong, nothing really matters.
 
 ## Screenshots
-![Determined Application Home](blob/screenshots/Determined_Application_Home.png)
-![Determined Application About](blob/screenshots/Determined_Application_About.png)
-![Determined Application Decide](blob/screenshots/Determined_Application_Decide.png)
-![Determined Application Account](blob/screenshots/Determined_Application_Account.png)
-![Determined Application Review](blob/screenshots/Determined_Application_Review.png)
+![Determined Application Home](Determined_Application_Home.png)
+![Determined Application About](Determined_Application_About.png)
+![Determined Application Decide](Determined_Application_Decide.png)
+![Determined Application Account](Determined_Application_Account.png)
+![Determined Application Review](Determined_Application_Review.png)
 
 
 ## Link to Deployed Application
