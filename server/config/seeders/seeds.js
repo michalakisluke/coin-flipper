@@ -51,7 +51,7 @@ db.once("open", async () => {
     username: "SteveTheEgg666",
     email: "stegg@testmail.com",
     password: "EggsRg00d",
-    decisions: [decisions[0]._id, decisions[1]._id],
+    decisions: [Decision],
   });
 
   console.log("user seeded");
